@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-pod
+  template:
+    metadata:
+      labels:
+        app: backend-pod
+    spec:
+      containers:
+      - name: backend-container
+        image: gcr.io/august-shield-345908/backendimage:latest 
+        ports:
+        - containerPort: 5000
