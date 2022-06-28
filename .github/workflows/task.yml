@@ -37,5 +37,5 @@ jobs:
       
       - name: helm mychart
         run: |
-          helm install my-release .
+          #helm install my-release .
           helm upgrade my-release
